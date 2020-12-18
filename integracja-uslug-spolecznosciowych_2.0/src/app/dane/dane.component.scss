@@ -1,0 +1,33 @@
+.dane {
+  padding-top: 50px;
+  padding-bottom: 50px;
+  background-color: lightcyan;
+  .dane_button {
+    margin-top: 20px;
+  }
+  .dane_response {
+    margin-top: 10px;
+    text-align: center;
+  }
+  .dane_label {
+    color: purple;
+    font-weight: bold;
+  }
+}
+
+.bg-transparent {
+  background-color: transparent;
+}
+
+:host {
+  height: 100%;
+}
+
+.photo {
+  object-fit: contain;
+}
+
+.card {
+  width: 20rem;
+  margin: 0 auto;
+}

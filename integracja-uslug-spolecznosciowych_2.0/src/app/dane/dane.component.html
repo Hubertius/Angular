@@ -1,0 +1,60 @@
+<div class="container dane">
+    <div class="row">
+        <div class="col-12 dane-container">
+            <h1>Welcome to the panel of your data base!</h1>
+            <!-- <h5>User named `{{user.userName}}` with ID: `{{user.id}}`</h5> -->
+            <hr>
+            <div class="form-row">
+                <div class="col-md-9">
+                    <label for="user" class="control-label dane_label">Username</label>
+                    <input name="user" style="text-align: center;" disabled class="form-control" [value]="this.userEmail" (input)="user2.userName = $event.target.value" >
+                </div>
+            </div>
+            <hr>
+            <div class="jumbotron bg-transparent text-center">
+              <div *ngIf="!user" class="card text-center">
+                <h6 class="card-header">
+                  Social Login Demo
+                </h6>
+                <div class="card-block">
+                  <h4 class="card-title">Not signed in</h4>
+                  <p class="card-text">Sign in with</p>
+                </div>
+                <div class="card-block">
+                  <button class="btn btn-social-icon btn-google mx-1" (click)="signInWithGoogle()"><span class="fab fa-google"></span></button>
+                  <button class="btn btn-social-icon btn-facebook mx-1" (click)="signInWithFB()"><span class="fab fa-facebook"></span></button>
+                </div>
+              </div>
+              <div *ngIf="user" class="card text-center">
+                <h6 class="card-header">
+                  Social Login Demo
+                </h6>
+                <div class="card-block"></div>
+                <img *ngIf="user.photoUrl" class="card-img-top img-responsive photo" src="{{ user.photoUrl }}">
+                <div class="card-block">
+                  <h4 class="card-title">{{ user.name }}</h4>
+                  <p class="card-text">{{ user.email }}</p>
+                  <p class="card-text">Logged in with {{ user.provider }}</p>
+                </div>
+                <div class="card-block">
+                  <button class="btn btn-danger" (click)="signOut()">Sign out</button>
+                </div>
+                <div class="card-block" *ngIf="user.provider === GoogleLoginProvider.PROVIDER_ID">
+                  <button class="btn" (click)="refreshGoogleToken()">Refresh google token</button>
+                </div>
+              </div>
+            </div>
+              <hr>
+            <div class="form-row">
+                <!-- <div class="col-md-6">
+                    <button class="btn btn-success btn-lg btn-block dane_button" (click)="submit()">Save Data</button>
+                </div> -->
+            </div>
+            <!-- <div class="form-row dane_response">
+                <h2 class="col-md-12">{{response}}</h2>
+            </div> -->
+        </div>
+    </div>
+</div>
+
+

@@ -1,0 +1,17 @@
+.page {
+  margin: auto;
+  min-width: 300px;
+  background-color: lightslategray;
+  height: 1450px;
+  @media screen and (min-width: 768px) {
+    height: 100vh;
+  }
+  .page-container {
+    position: relative;
+    margin-left: 10vw;
+    margin-right: 10vw;
+    @media screen and (min-width: 1140px) {
+      max-width: 1200px;
+    }
+  }
+}
